@@ -1,11 +1,10 @@
-﻿using AlbedoTeam.Communications.Contracts.Requests;
-using AlbedoTeam.Sdk.FailFast;
+﻿using AlbedoTeam.Sdk.FailFast;
 using Communications.Api.Models;
 using MediatR;
 
 namespace Communications.Api.Services.MessageLogService.Requests
 {
-    public class List : IRequest<Result<Paged<MessageLog>>>, ListMessageLogs
+    public class List : IRequest<Result<Paged<MessageLog>>>
     {
         public bool ShowDeleted { get; set; }
         public int Page { get; set; }

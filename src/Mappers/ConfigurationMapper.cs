@@ -20,8 +20,10 @@ namespace Communications.Api.Mappers
                 // response X model
                 cfg.CreateMap<Configuration, ConfigurationResponse>().ReverseMap();
                 cfg.CreateMap<ConfigurationContract, IConfigurationContract>().ReverseMap();
+                cfg.CreateMap<FromAddress, IFromAddress>().ReverseMap();
 
                 // request X broker
+
                 cfg.CreateMap<Create, CreateConfiguration>().ReverseMap();
                 cfg.CreateMap<Delete, DeleteConfiguration>().ReverseMap();
                 cfg.CreateMap<Get, GetConfiguration>().ReverseMap();
