@@ -9,7 +9,8 @@ using NSwag.Annotations;
 namespace Communications.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("v{version:apiVersion}/[controller]")]
+    [ApiVersion("1")]
     [OpenApiTag("Templates", Description = "Messge template management")]
     public class TemplateController : ControllerBase
     {

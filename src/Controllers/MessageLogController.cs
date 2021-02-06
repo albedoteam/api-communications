@@ -9,7 +9,8 @@ using NSwag.Annotations;
 namespace Communications.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("v{version:apiVersion}/[controller]")]
+    [ApiVersion("1")]
     [OpenApiTag("Message Logs", Description = "Message Log management")]
     public class MessageLogController : ControllerBase
     {
