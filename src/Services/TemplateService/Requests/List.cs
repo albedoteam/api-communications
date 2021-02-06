@@ -1,0 +1,13 @@
+﻿using AlbedoTeam.Sdk.FailFast;
+using Communications.Api.Models;
+using MediatR;
+
+namespace Communications.Api.Services.TemplateService.Requests
+{
+    public class List : IRequest<Result<Paged<Template>>>
+    {
+        public bool ShowDeleted { get; set; }
+        public int Page { get; set; }
+        public int PageSize { get; set; }
+    }
+}
