@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AlbedoTeam.Communications.Contracts" Version="1.0.0-CI-20210206-213854" />
+        <PackageReference Include="AlbedoTeam.Communications.Contracts" Version="1.0.0-CI-20210207-154251" />
         <PackageReference Include="AlbedoTeam.Sdk.Documentation" Version="1.0.0-CI-20210206-154244" />
         <PackageReference Include="AlbedoTeam.Sdk.FailFast" Version="1.0.0-CI-20210122-005336" />
         <PackageReference Include="AlbedoTeam.Sdk.MessageProducer" Version="1.0.0-CI-20210110-155121" />
