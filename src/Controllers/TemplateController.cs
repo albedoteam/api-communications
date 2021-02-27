@@ -22,17 +22,9 @@ namespace Communications.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<Paged<Template>>> List(
-            [FromQuery] bool showDeleted,
-            [FromQuery] int? page,
-            [FromQuery] int? pageSize)
+        public async Task<ActionResult<Paged<Template>>> List([FromQuery] List request)
         {
-            var response = await _mediator.Send(new List
-            {
-                ShowDeleted = showDeleted,
-                Page = page ?? 1,
-                PageSize = pageSize ?? 1
-            });
+            var response = await _mediator.Send(request);
 
             return response.HasError
                 ? HandleError(response)

@@ -8,6 +8,7 @@ namespace Communications.Api.Services.TemplateService.Requests
 {
     public class Update : IRequest<Result<Template>>
     {
+        public string AccountId { get; set; }
         public string Id { get; set; }
         public string Name { get; set; }
         public MessageType MessageType { get; set; }
