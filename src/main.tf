@@ -1,4 +1,4 @@
-﻿terraform {
+terraform {
   required_providers {
     kubernetes = {
       source  = "hashicorp/kubernetes"
@@ -13,44 +13,69 @@ provider "kubernetes" {
 
 resource "kubernetes_namespace" "communications" {
   metadata {
-    name = "communications-api"
+    name = var.src_name
+  }
+}
+
+resource "kubernetes_secret" "communications" {
+  metadata {
+    name      = var.secret_name
+    namespace = kubernetes_namespace.communications.metadata.0.name
+  }
+  data = {
+    Broker_Host = var.broker_connection_string
   }
 }
 
 resource "kubernetes_deployment" "communications" {
   metadata {
-    name = "communications-api"
+    name      = var.src_name
     namespace = kubernetes_namespace.communications.metadata.0.name
     labels = {
-      app = "CommunicationsApi"
+      app = var.deployment_label
     }
   }
 
   spec {
-    replicas = 2
+    replicas = var.replicas_count
     selector {
       match_labels = {
-        app = "communications-api"
+        app = var.src_name
       }
     }
     template {
       metadata {
         labels = {
-          app = "communications-api"
+          app = var.src_name
         }
       }
       spec {
         container {
-          image = "communications-api:latest"
-          name = "communications-api-container"
+          image             = "${var.src_name}:latest"
+          name              = "${var.src_name}-container"
           image_pull_policy = "IfNotPresent"
+          resources {
+            limits = {
+              cpu    = "0.5"
+              memory = "512Mi"
+            }
+            requests = {
+              cpu    = "250m"
+              memory = "50Mi"
+            }
+          }
           port {
             container_port = 80
-            protocol = "TCP"
+            protocol       = "TCP"
           }
           env {
-            name = "ASPNETCORE_URLS"
+            name  = "ASPNETCORE_URLS"
             value = "http://+:80"
+          }
+          env_from {
+            secret_ref {
+              name = var.secret_name
+            }
           }
         }
       }
@@ -60,18 +85,18 @@ resource "kubernetes_deployment" "communications" {
 
 resource "kubernetes_service" "communications" {
   metadata {
-    name = "communications-api"
+    name      = var.src_name
     namespace = kubernetes_namespace.communications.metadata.0.name
     labels = {
-      app = "communications-api"
+      app = var.src_name
     }
   }
   spec {
     type = "LoadBalancer"
     port {
-      port = "5200"
+      port        = "5300"
       target_port = "80"
-      protocol = "TCP"
+      protocol    = "TCP"
     }
     selector = {
       app = kubernetes_deployment.communications.spec.0.template.0.metadata.0.labels.app

@@ -48,7 +48,7 @@ namespace Communications.Api
 
             services.AddProducer(
                 configure => configure
-                    .SetBrokerOptions(broker => broker.Host = Configuration.GetValue<string>("Broker:Host")),
+                    .SetBrokerOptions(broker => broker.Host = Configuration.GetValue<string>("Broker_Host")),
                 consumers => { },
                 queues => queues.Map<SendMessage>(),
                 clients =>
