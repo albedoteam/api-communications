@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using AlbedoTeam.Communications.Contracts.Common;
+using AlbedoTeam.Communications.Contracts.Requests;
 using AlbedoTeam.Sdk.FailFast;
 using Communications.Api.Models;
 using MediatR;

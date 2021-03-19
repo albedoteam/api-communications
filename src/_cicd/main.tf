@@ -104,12 +104,6 @@ resource "kubernetes_service" "communications" {
       target_port = 80
       protocol    = "TCP"
     }
-    port {
-      name        = "https"
-      port        = 5301
-      target_port = 443
-      protocol    = "TCP"
-    }
     selector = {
       app = kubernetes_deployment.communications.spec.0.template.0.metadata.0.labels.app
     }
