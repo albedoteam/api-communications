@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Communications.Api.Models
+﻿namespace Communications.Api.Models
 {
+    using System;
+
     public abstract class BaseModel
     {
         public string Id { get; set; }

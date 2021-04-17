@@ -1,7 +1,7 @@
-﻿using AlbedoTeam.Communications.Contracts.Common;
-
-namespace Communications.Api.Models
+﻿namespace Communications.Api.Models
 {
+    using AlbedoTeam.Communications.Contracts.Common;
+
     public class ConfigurationContract
     {
         public MessageType MessageType { get; set; }

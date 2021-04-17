@@ -1,12 +1,12 @@
-﻿using AlbedoTeam.Communications.Contracts.Commands;
-using AlbedoTeam.Communications.Contracts.Common;
-using AutoMapper;
-using Communications.Api.Mappers.Abstractions;
-using Communications.Api.Models;
-using Communications.Api.Services.CommunicationService.Requests;
-
-namespace Communications.Api.Mappers
+﻿namespace Communications.Api.Mappers
 {
+    using Abstractions;
+    using AlbedoTeam.Communications.Contracts.Commands;
+    using AlbedoTeam.Communications.Contracts.Common;
+    using AutoMapper;
+    using Models;
+    using Services.CommunicationService.Requests;
+
     public class CommunicationMapper : ICommunicationMapper
     {
         private readonly IMapper _mapper;

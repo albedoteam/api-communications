@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-using AlbedoTeam.Communications.Contracts.Common;
-using AlbedoTeam.Communications.Contracts.Requests;
-using AlbedoTeam.Sdk.FailFast;
-using Communications.Api.Models;
-using MediatR;
-
-namespace Communications.Api.Services.ConfigurationService.Requests
+﻿namespace Communications.Api.Services.ConfigurationService.Requests
 {
+    using System.Collections.Generic;
+    using AlbedoTeam.Communications.Contracts.Common;
+    using AlbedoTeam.Sdk.FailFast;
+    using MediatR;
+    using Models;
+
     public class Update : IRequest<Result<Configuration>>
     {
         public string AccountId { get; set; }

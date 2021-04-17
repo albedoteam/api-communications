@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Communications.Api.Models
+﻿namespace Communications.Api.Models
 {
+    using System;
+    using System.Collections.Generic;
+
     public class MessageLog : BaseModel
     {
         public string AccountId { get; set; }

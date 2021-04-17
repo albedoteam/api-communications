@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace Communications.Api.Models
+﻿namespace Communications.Api.Models
 {
+    using System.Collections.Generic;
+
     public class Paged<T> where T : class, new()
     {
         public int Page { get; set; }

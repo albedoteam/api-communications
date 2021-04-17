@@ -1,9 +1,9 @@
-﻿using System.Text.RegularExpressions;
-using Communications.Api.Services.TemplateService.Requests;
-using FluentValidation;
-
-namespace Communications.Api.Validators.TemplateValidators
+﻿namespace Communications.Api.Validators.TemplateValidators
 {
+    using System.Text.RegularExpressions;
+    using FluentValidation;
+    using Services.TemplateService.Requests;
+
     public class CreateValidator : AbstractValidator<Create>
     {
         public CreateValidator()

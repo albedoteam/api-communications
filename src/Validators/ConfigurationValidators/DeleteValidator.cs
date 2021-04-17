@@ -1,9 +1,9 @@
-﻿using System.Text.RegularExpressions;
-using Communications.Api.Services.ConfigurationService.Requests;
-using FluentValidation;
-
-namespace Communications.Api.Validators.ConfigurationValidators
+﻿namespace Communications.Api.Validators.ConfigurationValidators
 {
+    using System.Text.RegularExpressions;
+    using FluentValidation;
+    using Services.ConfigurationService.Requests;
+
     public class DeleteValidator : AbstractValidator<Delete>
     {
         public DeleteValidator()

@@ -1,9 +1,9 @@
-﻿using AlbedoTeam.Sdk.FailFast;
-using Communications.Api.Models;
-using MediatR;
-
-namespace Communications.Api.Services.ConfigurationService.Requests
+﻿namespace Communications.Api.Services.ConfigurationService.Requests
 {
+    using AlbedoTeam.Sdk.FailFast;
+    using MediatR;
+    using Models;
+
     public class Delete : IRequest<Result<Configuration>>
     {
         public string AccountId { get; set; }

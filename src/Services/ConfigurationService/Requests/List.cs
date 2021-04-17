@@ -1,10 +1,12 @@
-﻿using AlbedoTeam.Communications.Contracts.Common;
-using AlbedoTeam.Sdk.FailFast;
-using Communications.Api.Models;
-using MediatR;
-
-namespace Communications.Api.Services.ConfigurationService.Requests
+﻿namespace Communications.Api.Services.ConfigurationService.Requests
 {
+    using AlbedoTeam.Communications.Contracts.Common;
+    using AlbedoTeam.Sdk.Cache.Attributes;
+    using AlbedoTeam.Sdk.FailFast;
+    using MediatR;
+    using Models;
+
+    [Cache(120)]
     public class List : IRequest<Result<Paged<Configuration>>>
     {
         public string AccountId { get; set; }

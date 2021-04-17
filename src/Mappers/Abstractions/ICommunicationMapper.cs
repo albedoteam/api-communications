@@ -1,8 +1,8 @@
-﻿using AlbedoTeam.Communications.Contracts.Commands;
-using Communications.Api.Services.CommunicationService.Requests;
-
-namespace Communications.Api.Mappers.Abstractions
+﻿namespace Communications.Api.Mappers.Abstractions
 {
+    using AlbedoTeam.Communications.Contracts.Commands;
+    using Services.CommunicationService.Requests;
+
     public interface ICommunicationMapper
     {
         SendMessage MapRequestToCommand(SendMessageRequest request);

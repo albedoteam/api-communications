@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using AlbedoTeam.Communications.Contracts.Common;
-using AlbedoTeam.Sdk.FailFast;
-using Communications.Api.Models;
-using MediatR;
-
-namespace Communications.Api.Services.TemplateService.Requests
+﻿namespace Communications.Api.Services.TemplateService.Requests
 {
+    using System.Collections.Generic;
+    using AlbedoTeam.Communications.Contracts.Common;
+    using AlbedoTeam.Sdk.FailFast;
+    using MediatR;
+    using Models;
+
     public class Create : IRequest<Result<Template>>
     {
         public string AccountId { get; set; }

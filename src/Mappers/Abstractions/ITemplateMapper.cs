@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using AlbedoTeam.Communications.Contracts.Requests;
-using AlbedoTeam.Communications.Contracts.Responses;
-using Communications.Api.Models;
-using Communications.Api.Services.TemplateService.Requests;
-
-namespace Communications.Api.Mappers.Abstractions
+﻿namespace Communications.Api.Mappers.Abstractions
 {
+    using System.Collections.Generic;
+    using AlbedoTeam.Communications.Contracts.Requests;
+    using AlbedoTeam.Communications.Contracts.Responses;
+    using Models;
+    using Services.TemplateService.Requests;
+
     public interface ITemplateMapper
     {
         // request to broker

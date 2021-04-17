@@ -1,8 +1,8 @@
-﻿using Communications.Api.Models;
-using FluentValidation;
-
-namespace Communications.Api.Validators.SendMessageValidators
+﻿namespace Communications.Api.Validators.SendMessageValidators
 {
+    using FluentValidation;
+    using Models;
+
     public class DestinationAddressValidator : AbstractValidator<DestinationAddress>
     {
         public DestinationAddressValidator()

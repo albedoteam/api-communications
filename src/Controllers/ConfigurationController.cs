@@ -1,13 +1,13 @@
-﻿using System.Threading.Tasks;
-using AlbedoTeam.Sdk.FailFast;
-using Communications.Api.Models;
-using Communications.Api.Services.ConfigurationService.Requests;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using NSwag.Annotations;
-
-namespace Communications.Api.Controllers
+﻿namespace Communications.Api.Controllers
 {
+    using System.Threading.Tasks;
+    using AlbedoTeam.Sdk.FailFast;
+    using MediatR;
+    using Microsoft.AspNetCore.Mvc;
+    using Models;
+    using NSwag.Annotations;
+    using Services.ConfigurationService.Requests;
+
     [ApiController]
     [Route("v{version:apiVersion}/[controller]")]
     [ApiVersion("1")]
