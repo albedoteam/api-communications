@@ -12,7 +12,10 @@
                 .NotEmpty()
                 .Matches("^[0-9a-fA-F]{24}$", RegexOptions.IgnoreCase);
 
-            RuleFor(c => c.Name)
+            RuleFor(c => c.DisplayName)
+                .NotEmpty();
+
+            RuleFor(c => c.Subject)
                 .NotEmpty();
 
             RuleFor(c => c.Id)

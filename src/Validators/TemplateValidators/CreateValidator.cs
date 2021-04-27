@@ -15,6 +15,12 @@
             RuleFor(c => c.Name)
                 .NotEmpty();
 
+            RuleFor(c => c.DisplayName)
+                .NotEmpty();
+
+            RuleFor(c => c.Subject)
+                .NotEmpty();
+
             RuleFor(c => c.ContentPattern)
                 .NotEmpty();
 

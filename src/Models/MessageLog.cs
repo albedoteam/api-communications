@@ -3,8 +3,10 @@
     using System;
     using System.Collections.Generic;
 
-    public class MessageLog : BaseModel
+    public class MessageLog
     {
+        public string Id { get; set; }
+
         public string AccountId { get; set; }
         public string Provider { get; set; }
         public string MessageType { get; set; }
@@ -16,5 +18,10 @@
         public DateTime? SentAt { get; set; }
         public string Status { get; set; }
         public string DetailMessage { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTime? DeletedAt { get; set; }
     }
 }

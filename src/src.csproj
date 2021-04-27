@@ -7,7 +7,7 @@
     <UserSecretsId>0b2c440a-b74c-4962-b185-c520995885af</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AlbedoTeam.Communications.Contracts" Version="1.0.0-CI-20210225-182250" />
+    <PackageReference Include="AlbedoTeam.Communications.Contracts" Version="1.0.0-CI-20210427-002247" />
     <PackageReference Include="AlbedoTeam.Sdk.Authentication" Version="1.0.0-CI-20210331-171833" />
     <PackageReference Include="AlbedoTeam.Sdk.Documentation" Version="1.0.0-CI-20210221-205220" />
     <PackageReference Include="AlbedoTeam.Sdk.FailFast" Version="1.0.0-CI-20210420-155000" />

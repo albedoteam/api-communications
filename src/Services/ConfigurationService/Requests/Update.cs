@@ -11,6 +11,7 @@
         public string AccountId { get; set; }
         public string Id { get; set; }
         public string Name { get; set; }
+        public string DisplayName { get; set; }
         public Provider Provider { get; set; }
         public List<ConfigurationContract> Contracts { get; set; }
         public bool Enabled { get; set; }
