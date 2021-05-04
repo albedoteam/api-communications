@@ -37,7 +37,10 @@
                 PageSize = configurations.PageSize,
                 TotalPages = configurations.TotalPages,
                 RecordsInPage = configurations.RecordsInPage,
-                Items = _mapper.MapResponseToModel(configurations.Items)
+                Items = _mapper.MapResponseToModel(configurations.Items),
+                FilterBy = configurations.FilterBy,
+                OrderBy = configurations.OrderBy,
+                Sorting = configurations.Sorting
             };
 
             return new Result<Paged<Configuration>>(paged);

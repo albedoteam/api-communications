@@ -37,7 +37,10 @@
                 PageSize = templates.PageSize,
                 TotalPages = templates.TotalPages,
                 RecordsInPage = templates.RecordsInPage,
-                Items = _mapper.MapResponseToModel(templates.Items)
+                Items = _mapper.MapResponseToModel(templates.Items),
+                FilterBy = templates.FilterBy,
+                OrderBy = templates.OrderBy,
+                Sorting = templates.Sorting
             };
 
             return new Result<Paged<Template>>(paged);

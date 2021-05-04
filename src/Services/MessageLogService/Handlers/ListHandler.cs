@@ -37,7 +37,10 @@
                 PageSize = messageLogs.PageSize,
                 TotalPages = messageLogs.TotalPages,
                 RecordsInPage = messageLogs.RecordsInPage,
-                Items = _mapper.MapResponseToModel(messageLogs.Items)
+                Items = _mapper.MapResponseToModel(messageLogs.Items),
+                FilterBy = messageLogs.FilterBy,
+                OrderBy = messageLogs.OrderBy,
+                Sorting = messageLogs.Sorting
             };
 
             return new Result<Paged<MessageLog>>(paged);
