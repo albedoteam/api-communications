@@ -1,8 +1,8 @@
-﻿using Communications.Api.Models;
-using FluentValidation;
-
-namespace Communications.Api.Validators.ConfigurationValidators
+﻿namespace Communications.Api.Validators.ConfigurationValidators
 {
+    using FluentValidation;
+    using Models;
+
     public class ConfigurationContractValidator : AbstractValidator<ConfigurationContract>
     {
         public ConfigurationContractValidator()

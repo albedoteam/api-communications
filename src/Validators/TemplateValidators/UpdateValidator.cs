@@ -1,9 +1,9 @@
-﻿using System.Text.RegularExpressions;
-using Communications.Api.Services.TemplateService.Requests;
-using FluentValidation;
-
-namespace Communications.Api.Validators.TemplateValidators
+﻿namespace Communications.Api.Validators.TemplateValidators
 {
+    using System.Text.RegularExpressions;
+    using FluentValidation;
+    using Services.TemplateService.Requests;
+
     public class UpdateValidator : AbstractValidator<Update>
     {
         public UpdateValidator()
@@ -12,7 +12,10 @@ namespace Communications.Api.Validators.TemplateValidators
                 .NotEmpty()
                 .Matches("^[0-9a-fA-F]{24}$", RegexOptions.IgnoreCase);
 
-            RuleFor(c => c.Name)
+            RuleFor(c => c.DisplayName)
+                .NotEmpty();
+
+            RuleFor(c => c.Subject)
                 .NotEmpty();
 
             RuleFor(c => c.Id)

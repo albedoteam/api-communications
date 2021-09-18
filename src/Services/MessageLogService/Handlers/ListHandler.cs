@@ -1,16 +1,16 @@
-﻿using System.Threading.Tasks;
-using AlbedoTeam.Communications.Contracts.Requests;
-using AlbedoTeam.Communications.Contracts.Responses;
-using AlbedoTeam.Sdk.FailFast;
-using AlbedoTeam.Sdk.FailFast.Abstractions;
-using Communications.Api.Extensions;
-using Communications.Api.Mappers.Abstractions;
-using Communications.Api.Models;
-using Communications.Api.Services.MessageLogService.Requests;
-using MassTransit;
-
-namespace Communications.Api.Services.MessageLogService.Handlers
+﻿namespace Communications.Api.Services.MessageLogService.Handlers
 {
+    using System.Threading.Tasks;
+    using AlbedoTeam.Communications.Contracts.Requests;
+    using AlbedoTeam.Communications.Contracts.Responses;
+    using AlbedoTeam.Sdk.FailFast;
+    using AlbedoTeam.Sdk.FailFast.Abstractions;
+    using Extensions;
+    using Mappers.Abstractions;
+    using MassTransit;
+    using Models;
+    using Requests;
+
     public class ListHandler : QueryHandler<List, Paged<MessageLog>>
     {
         private readonly IRequestClient<ListMessageLogs> _client;
@@ -37,7 +37,10 @@ namespace Communications.Api.Services.MessageLogService.Handlers
                 PageSize = messageLogs.PageSize,
                 TotalPages = messageLogs.TotalPages,
                 RecordsInPage = messageLogs.RecordsInPage,
-                Items = _mapper.MapResponseToModel(messageLogs.Items)
+                Items = _mapper.MapResponseToModel(messageLogs.Items),
+                FilterBy = messageLogs.FilterBy,
+                OrderBy = messageLogs.OrderBy,
+                Sorting = messageLogs.Sorting
             };
 
             return new Result<Paged<MessageLog>>(paged);

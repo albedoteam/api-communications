@@ -1,9 +1,9 @@
-﻿using System.Text.RegularExpressions;
-using Communications.Api.Services.CommunicationService.Requests;
-using FluentValidation;
-
-namespace Communications.Api.Validators.SendMessageValidators
+﻿namespace Communications.Api.Validators.SendMessageValidators
 {
+    using System.Text.RegularExpressions;
+    using FluentValidation;
+    using Services.CommunicationService.Requests;
+
     public class SendMessageRequestValidator : AbstractValidator<SendMessageRequest>
     {
         public SendMessageRequestValidator()

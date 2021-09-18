@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using AlbedoTeam.Sdk.FailFast;
-using Communications.Api.Models;
-using MediatR;
-
-namespace Communications.Api.Services.CommunicationService.Requests
+﻿namespace Communications.Api.Services.CommunicationService.Requests
 {
+    using System.Collections.Generic;
+    using AlbedoTeam.Sdk.FailFast;
+    using MediatR;
+    using Models;
+
     public class SendMessageRequest : IRequest<Result<MessageLog>>
     {
         public string AccountId { get; set; }

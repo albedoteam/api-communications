@@ -1,16 +1,16 @@
-﻿using System.Threading.Tasks;
-using AlbedoTeam.Communications.Contracts.Requests;
-using AlbedoTeam.Communications.Contracts.Responses;
-using AlbedoTeam.Sdk.FailFast;
-using AlbedoTeam.Sdk.FailFast.Abstractions;
-using Communications.Api.Extensions;
-using Communications.Api.Mappers.Abstractions;
-using Communications.Api.Models;
-using Communications.Api.Services.TemplateService.Requests;
-using MassTransit;
-
-namespace Communications.Api.Services.TemplateService.Handlers
+﻿namespace Communications.Api.Services.TemplateService.Handlers
 {
+    using System.Threading.Tasks;
+    using AlbedoTeam.Communications.Contracts.Requests;
+    using AlbedoTeam.Communications.Contracts.Responses;
+    using AlbedoTeam.Sdk.FailFast;
+    using AlbedoTeam.Sdk.FailFast.Abstractions;
+    using Extensions;
+    using Mappers.Abstractions;
+    using MassTransit;
+    using Models;
+    using Requests;
+
     public class ListHandler : QueryHandler<List, Paged<Template>>
     {
         private readonly IRequestClient<ListTemplates> _client;
@@ -37,7 +37,10 @@ namespace Communications.Api.Services.TemplateService.Handlers
                 PageSize = templates.PageSize,
                 TotalPages = templates.TotalPages,
                 RecordsInPage = templates.RecordsInPage,
-                Items = _mapper.MapResponseToModel(templates.Items)
+                Items = _mapper.MapResponseToModel(templates.Items),
+                FilterBy = templates.FilterBy,
+                OrderBy = templates.OrderBy,
+                Sorting = templates.Sorting
             };
 
             return new Result<Paged<Template>>(paged);

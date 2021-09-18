@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using AlbedoTeam.Communications.Contracts.Common;
-using AlbedoTeam.Communications.Contracts.Requests;
-using AlbedoTeam.Communications.Contracts.Responses;
-using AutoMapper;
-using Communications.Api.Mappers.Abstractions;
-using Communications.Api.Models;
-using Communications.Api.Services.ConfigurationService.Requests;
-
-namespace Communications.Api.Mappers
+﻿namespace Communications.Api.Mappers
 {
+    using System.Collections.Generic;
+    using Abstractions;
+    using AlbedoTeam.Communications.Contracts.Common;
+    using AlbedoTeam.Communications.Contracts.Requests;
+    using AlbedoTeam.Communications.Contracts.Responses;
+    using AutoMapper;
+    using Models;
+    using Services.ConfigurationService.Requests;
+
     public class ConfigurationMapper : IConfigurationMapper
     {
         private readonly IMapper _mapper;

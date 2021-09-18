@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Communications.Api.Models
+﻿namespace Communications.Api.Models
 {
-    public class MessageLog : BaseModel
+    using System;
+    using System.Collections.Generic;
+
+    public class MessageLog
     {
+        public string Id { get; set; }
+
         public string AccountId { get; set; }
         public string Provider { get; set; }
         public string MessageType { get; set; }
@@ -16,5 +18,10 @@ namespace Communications.Api.Models
         public DateTime? SentAt { get; set; }
         public string Status { get; set; }
         public string DetailMessage { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public bool IsDeleted { get; set; }
+        public DateTime? DeletedAt { get; set; }
     }
 }

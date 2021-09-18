@@ -1,13 +1,13 @@
-﻿using System.Threading.Tasks;
-using AlbedoTeam.Sdk.FailFast;
-using Communications.Api.Models;
-using Communications.Api.Services.TemplateService.Requests;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using NSwag.Annotations;
-
-namespace Communications.Api.Controllers
+﻿namespace Communications.Api.Controllers
 {
+    using System.Threading.Tasks;
+    using AlbedoTeam.Sdk.FailFast;
+    using MediatR;
+    using Microsoft.AspNetCore.Mvc;
+    using Models;
+    using NSwag.Annotations;
+    using Services.TemplateService.Requests;
+
     [ApiController]
     [Route("v{version:apiVersion}/[controller]")]
     [ApiVersion("1")]
@@ -32,9 +32,12 @@ namespace Communications.Api.Controllers
         }
 
         [HttpGet("{id}", Name = "GetTemplate")]
-        public async Task<ActionResult<Template>> GetTemplate(string id, [FromQuery] bool showDeleted)
+        public async Task<ActionResult<Template>> GetTemplate(
+            string id,
+            [FromQuery] string accountId,
+            [FromQuery] bool showDeleted)
         {
-            var response = await _mediator.Send(new Get {Id = id, ShowDeleted = showDeleted});
+            var response = await _mediator.Send(new Get {Id = id, AccountId = accountId, ShowDeleted = showDeleted});
 
             return response.HasError
                 ? HandleError(response)
@@ -65,9 +68,9 @@ namespace Communications.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(string id, [FromQuery] string accountId)
         {
-            var response = await _mediator.Send(new Delete {Id = id});
+            var response = await _mediator.Send(new Delete {Id = id, AccountId = accountId});
 
             return response.HasError
                 ? HandleError(response)

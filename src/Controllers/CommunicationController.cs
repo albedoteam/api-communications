@@ -1,11 +1,11 @@
-﻿using System.Threading.Tasks;
-using Communications.Api.Services.CommunicationService.Requests;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using NSwag.Annotations;
-
-namespace Communications.Api.Controllers
+﻿namespace Communications.Api.Controllers
 {
+    using System.Threading.Tasks;
+    using MediatR;
+    using Microsoft.AspNetCore.Mvc;
+    using NSwag.Annotations;
+    using Services.CommunicationService.Requests;
+
     [ApiController]
     [Route("v{version:apiVersion}/[controller]")]
     [ApiVersion("1")]

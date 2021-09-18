@@ -1,8 +1,8 @@
-﻿using Communications.Api.Models;
-using FluentValidation;
-
-namespace Communications.Api.Validators.TemplateValidators
+﻿namespace Communications.Api.Validators.TemplateValidators
 {
+    using FluentValidation;
+    using Models;
+
     public class ContentParameterValidator : AbstractValidator<ContentParameter>
     {
         public ContentParameterValidator()

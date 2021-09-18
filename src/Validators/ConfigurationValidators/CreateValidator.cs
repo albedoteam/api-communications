@@ -1,14 +1,17 @@
-﻿using System.Text.RegularExpressions;
-using Communications.Api.Services.ConfigurationService.Requests;
-using FluentValidation;
-
-namespace Communications.Api.Validators.ConfigurationValidators
+﻿namespace Communications.Api.Validators.ConfigurationValidators
 {
+    using System.Text.RegularExpressions;
+    using FluentValidation;
+    using Services.ConfigurationService.Requests;
+
     public class CreateValidator : AbstractValidator<Create>
     {
         public CreateValidator()
         {
             RuleFor(c => c.Name)
+                .NotEmpty();
+
+            RuleFor(c => c.DisplayName)
                 .NotEmpty();
 
             RuleFor(c => c.AccountId)
